@@ -1,0 +1,21 @@
+ros2 run pcd2scan_slam_toolbox ground_removal_to_scan_ros2
+
+
+ros2 run pcd2scan_slam_toolbox utm_to_tf 
+
+
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link base_footprint
+
+
+
+ros2 run tf2_ros static_transform_publisher 0.5 0 1.2 0 0 0 base_link laser
+
+
+ros2 launch slam_toolbox online_async_launch.py
+
+
+
+ros2 循环发布bag包
+ros2 bag play /home/wudi/slam/hezi_lidar_bag/s9 --loop
+
+
