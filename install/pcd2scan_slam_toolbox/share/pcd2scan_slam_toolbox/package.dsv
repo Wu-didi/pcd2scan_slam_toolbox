@@ -1,0 +1,6 @@
+source;share/pcd2scan_slam_toolbox/hook/pythonpath.ps1
+source;share/pcd2scan_slam_toolbox/hook/pythonpath.dsv
+source;share/pcd2scan_slam_toolbox/hook/pythonpath.sh
+source;share/pcd2scan_slam_toolbox/hook/ament_prefix_path.ps1
+source;share/pcd2scan_slam_toolbox/hook/ament_prefix_path.dsv
+source;share/pcd2scan_slam_toolbox/hook/ament_prefix_path.sh

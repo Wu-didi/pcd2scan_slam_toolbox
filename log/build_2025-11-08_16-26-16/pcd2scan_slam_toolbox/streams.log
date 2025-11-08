@@ -1,0 +1,52 @@
+[1.976s] Invoking command in '/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox': PYTHONPATH=/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/prefix_override:/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/pcd2scan_slam_toolbox build --build-base /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build install --record /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log --install-scripts $base/lib/pcd2scan_slam_toolbox --single-version-externally-managed
+[2.339s] running egg_info
+[2.340s] creating build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info
+[2.340s] writing build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/PKG-INFO
+[2.341s] writing dependency_links to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/dependency_links.txt
+[2.341s] writing entry points to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/entry_points.txt
+[2.341s] writing requirements to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/requires.txt
+[2.341s] writing top-level names to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/top_level.txt
+[2.344s] writing manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+[2.389s] reading manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+[2.390s] writing manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+[2.391s] running build
+[2.391s] running build_py
+[2.391s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build
+[2.391s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib
+[2.391s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/can_use.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/__init__.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/utm_to_tf.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.392s] copying pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+[2.393s] running install
+[2.394s] running install_lib
+[2.396s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.396s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.396s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/can_use.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.396s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/__init__.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.396s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.397s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/utm_to_tf.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.397s] copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+[2.398s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py to ground_removal_to_scan_simple.cpython-38.pyc
+[2.402s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/can_use.py to can_use.cpython-38.pyc
+[2.402s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/__init__.py to __init__.cpython-38.pyc
+[2.403s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py to ground_removal_to_scan_ros2.cpython-38.pyc
+[2.406s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/utm_to_tf.py to utm_to_tf.cpython-38.pyc
+[2.406s] byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan.py to ground_removal_to_scan.cpython-38.pyc
+[2.409s] running install_data
+[2.410s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/share/ament_index
+[2.410s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/share/ament_index/resource_index
+[2.410s] creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/share/ament_index/resource_index/packages
+[2.410s] copying resource/pcd2scan_slam_toolbox -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/share/ament_index/resource_index/packages
+[2.410s] copying package.xml -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/share/pcd2scan_slam_toolbox
+[2.410s] running install_egg_info
+[2.414s] Copying build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox-0.0.0-py3.8.egg-info
+[2.415s] running install_scripts
+[2.444s] Installing ground_removal_to_scan script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[2.444s] Installing ground_removal_to_scan_ros2 script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[2.444s] Installing simple_ground_removal_to_scan script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[2.445s] Installing utm_to_tf script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[2.445s] writing list of installed files to '/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log'
+[2.500s] Invoked command in '/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox' returned '0': PYTHONPATH=/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/prefix_override:/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/pcd2scan_slam_toolbox build --build-base /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build install --record /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log --install-scripts $base/lib/pcd2scan_slam_toolbox --single-version-externally-managed
