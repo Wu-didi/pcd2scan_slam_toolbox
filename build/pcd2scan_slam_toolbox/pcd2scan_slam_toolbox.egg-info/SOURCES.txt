@@ -13,6 +13,8 @@ pcd2scan_slam_toolbox/can_use.py
 pcd2scan_slam_toolbox/ground_removal_to_scan.py
 pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py
 pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py
+pcd2scan_slam_toolbox/imu_node.py
+pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py
 pcd2scan_slam_toolbox/utm_to_tf.py
 resource/pcd2scan_slam_toolbox
 test/test_copyright.py

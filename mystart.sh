@@ -18,7 +18,15 @@ ros2 launch slam_toolbox online_async_launch.py
 
 ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox/myset.yaml
 
+
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/config/mapper_params_online_async.yaml
+
 ros2 topic echo /scan
+
+
+ros2 bag record -a -o slam_bag_bag
+
+
 
 ros2 循环发布bag包
 ros2 bag play /home/wudi/slam/hezi_lidar_bag/s9 --loop

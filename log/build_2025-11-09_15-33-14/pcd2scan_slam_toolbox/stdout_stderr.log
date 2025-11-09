@@ -15,7 +15,9 @@ creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbo
 creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/can_use.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+copying pcd2scan_slam_toolbox/imu_node.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/__init__.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+copying pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/utm_to_tf.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
@@ -24,13 +26,17 @@ running install_lib
 creating /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/can_use.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/imu_node.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/__init__.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/utm_to_tf.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py to ground_removal_to_scan_simple.cpython-38.pyc
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/can_use.py to can_use.cpython-38.pyc
+byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/imu_node.py to imu_node.cpython-38.pyc
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py to old_time_ground_removal_to_scan_simple.cpython-38.pyc
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py to ground_removal_to_scan_ros2.cpython-38.pyc
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/utm_to_tf.py to utm_to_tf.cpython-38.pyc
 byte-compiling /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan.py to ground_removal_to_scan.cpython-38.pyc
@@ -45,6 +51,8 @@ Copying build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info to /home/nvid
 running install_scripts
 Installing ground_removal_to_scan script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing ground_removal_to_scan_ros2 script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing old_simple_ground_removal_to_scan script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing publish_imu script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing simple_ground_removal_to_scan script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing utm_to_tf script to /home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 writing list of installed files to '/home/nvidia/vcii/wudi/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log'

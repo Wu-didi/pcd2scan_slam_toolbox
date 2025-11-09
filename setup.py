@@ -23,7 +23,9 @@ setup(
                     'utm_to_tf = pcd2scan_slam_toolbox.utm_to_tf:main',
                     'ground_removal_to_scan_ros2 = pcd2scan_slam_toolbox.ground_removal_to_scan_ros2:main',
                     'ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan:main',
-                    'simple_ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan_simple:main'
+                    'simple_ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan_simple:main',
+                    'old_simple_ground_removal_to_scan = pcd2scan_slam_toolbox.old_time_ground_removal_to_scan_simple:main',
+                    'publish_imu = pcd2scan_slam_toolbox.imu_node:main'
         ],
     },
 )
