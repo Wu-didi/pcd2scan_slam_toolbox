@@ -39,3 +39,14 @@ ros2 topic hz /rslidar_points_prev
 
 
 ros2 run nav2_map_server map_saver_cli   -f /home/nvidia/my_map   --ros-args -p save_map_timeout:=10 -p use_sim_time:=true
+
+
+
+
+ros2 run pcd2scan_slam_toolbox png_map_astar_node \
+  --ros-args \
+  -p image_path:=/home/wudi/hybird_A_star_ws/src/Hybrid_A_Star-and-mpc_controller/maps/shiyanzhongxin_map_2d.png \
+  -p resolution:=0.1 \
+  -p origin_x:=-50.0 \
+  -p origin_y:=-80.0 \
+  -p frame_id:=map

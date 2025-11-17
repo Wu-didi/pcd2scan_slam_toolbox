@@ -252,6 +252,17 @@ class GroundRemovalScanPublisher(Node):
         try:
             pc = load_point_cloud(path)
             pts = np.asarray(pc.points)  # (N,3)
+            
+            # --- 过滤 NaN / Inf 点 ---
+            if pts.shape[0] > 0:
+                finite_mask = np.isfinite(pts).all(axis=1)
+                if not np.all(finite_mask):
+                    dropped = int((~finite_mask).sum())
+                    self.get_logger().warn(
+                        f"{os.path.basename(path)}: 过滤掉 {dropped} 个包含 NaN/Inf 的点"
+                    )
+                    pts = pts[finite_mask]
+            
             # 先把原始点云发出去
             if pts.shape[0] > 0:
                 raw_msg = ndarray_to_pointcloud2(pts, self.args.frame_id)
@@ -316,17 +327,17 @@ def build_args():
     p = argparse.ArgumentParser("Ground removal -> LaserScan ROS2 publisher (loop)")
     p.add_argument(
         "--input",
-        default="/home/wudi/slam/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox/data/1724726935637000000.pcd",
+        default="/home/wudi/slam/get_pc_from_db3/shiyanzhongxin.pcd",
         help="输入点云文件或目录",
     )
 
     # Ray-Ground 参数
-    p.add_argument("--sectors", type=int, default=180)
+    p.add_argument("--sectors", type=int, default=360)
     p.add_argument("--min_range", type=float, default=1.5)
     p.add_argument("--max_range", type=float, default=80.0)
     p.add_argument("--max_slope_deg", type=float, default=18.0)
     p.add_argument("--seed_dist", type=float, default=3.0)
-    p.add_argument("--height_thresh", type=float, default=0.2)
+    p.add_argument("--height_thresh", type=float, default=0.8)
     p.add_argument("--seed_pct", type=float, default=10.0)
 
     # LaserScan 参数
@@ -338,7 +349,7 @@ def build_args():
     p.add_argument("--range-max", type=float, default=100.0)
 
     # 发布频率
-    p.add_argument("--pub-rate", type=float, default=10.0, help="发布频率Hz，默认10")
+    p.add_argument("--pub-rate", type=float, default=15.0, help="发布频率Hz，默认10")
 
     return p.parse_args()
 

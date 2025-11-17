@@ -1,0 +1,29 @@
+running egg_info
+writing build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/PKG-INFO
+writing dependency_links to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/dependency_links.txt
+writing entry points to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/entry_points.txt
+writing requirements to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/requires.txt
+writing top-level names to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/top_level.txt
+reading manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+writing manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox-0.0.0-py3.8.egg-info' (and everything under it)
+Copying build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox-0.0.0-py3.8.egg-info
+running install_scripts
+Installing astar_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing ground_removal_to_scan_ros2 script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing imu_gps_logger script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing offline_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing old_simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing online_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing png_map_publisher script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing publish_imu script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+writing list of installed files to '/home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log'

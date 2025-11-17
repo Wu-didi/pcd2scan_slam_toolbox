@@ -25,7 +25,12 @@ setup(
                     'ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan:main',
                     'simple_ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan_simple:main',
                     'old_simple_ground_removal_to_scan = pcd2scan_slam_toolbox.old_time_ground_removal_to_scan_simple:main',
-                    'publish_imu = pcd2scan_slam_toolbox.imu_node:main'
+                    'publish_imu = pcd2scan_slam_toolbox.imu_node:main',
+                    'offline_utm_to_tf = pcd2scan_slam_toolbox.offline_utm_to_tf:main',
+                    'online_utm_to_tf = pcd2scan_slam_toolbox.online_utm_to_tf:main',
+                    'imu_gps_logger = pcd2scan_slam_toolbox.imu_gps_logger:main',
+                    'png_map_publisher = pcd2scan_slam_toolbox.png_map_publisher:main',
+                    'astar_planner_node = pcd2scan_slam_toolbox.astar_planner_node:main',
         ],
     },
 )

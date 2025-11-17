@@ -1,7 +1,12 @@
 [console_scripts]
+astar_planner_node = pcd2scan_slam_toolbox.astar_planner_node:main
 ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan:main
 ground_removal_to_scan_ros2 = pcd2scan_slam_toolbox.ground_removal_to_scan_ros2:main
+imu_gps_logger = pcd2scan_slam_toolbox.imu_gps_logger:main
+offline_utm_to_tf = pcd2scan_slam_toolbox.offline_utm_to_tf:main
 old_simple_ground_removal_to_scan = pcd2scan_slam_toolbox.old_time_ground_removal_to_scan_simple:main
+online_utm_to_tf = pcd2scan_slam_toolbox.online_utm_to_tf:main
+png_map_publisher = pcd2scan_slam_toolbox.png_map_publisher:main
 publish_imu = pcd2scan_slam_toolbox.imu_node:main
 simple_ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan_simple:main
 utm_to_tf = pcd2scan_slam_toolbox.utm_to_tf:main
