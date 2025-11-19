@@ -16,6 +16,7 @@ pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py
 pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py
 pcd2scan_slam_toolbox/imu_gps_logger.py
 pcd2scan_slam_toolbox/imu_node.py
+pcd2scan_slam_toolbox/local_path_planner_node.py
 pcd2scan_slam_toolbox/offline_utm_to_tf.py
 pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py
 pcd2scan_slam_toolbox/online_utm_to_tf.py

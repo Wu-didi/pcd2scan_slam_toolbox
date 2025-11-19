@@ -18,6 +18,7 @@ copying pcd2scan_slam_toolbox/utm_to_tf.py -> /home/wudi/slam/pcd2scan_slam_tool
 copying pcd2scan_slam_toolbox/png_map_publisher.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/astar_planner_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/__init__.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+copying pcd2scan_slam_toolbox/local_path_planner_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/imu_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
@@ -34,6 +35,7 @@ copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/png_map_publisher.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/astar_planner_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/__init__.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/local_path_planner_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/imu_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
@@ -47,6 +49,7 @@ byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolb
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/png_map_publisher.py to png_map_publisher.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/astar_planner_node.py to astar_planner_node.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/local_path_planner_node.py to local_path_planner_node.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/imu_node.py to imu_node.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_simple.py to ground_removal_to_scan_simple.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py to old_time_ground_removal_to_scan_simple.cpython-38.pyc
@@ -68,6 +71,7 @@ Installing astar_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/in
 Installing ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing ground_removal_to_scan_ros2 script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing imu_gps_logger script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing local_path_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing offline_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing old_simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing online_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox

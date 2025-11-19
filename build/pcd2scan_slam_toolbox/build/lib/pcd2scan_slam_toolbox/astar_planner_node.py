@@ -33,6 +33,27 @@ class AstarPlannerNode(Node):
         self.declare_parameter('robot_radius', 0.5)
         self.robot_radius = float(self.get_parameter('robot_radius').value)
 
+        # 车辆动力学相关配置
+        self.declare_parameter('min_turning_radius', 2.0)
+        self.declare_parameter('smooth_iterations', 150)
+        self.declare_parameter('smooth_weight_data', 0.15)
+        self.declare_parameter('smooth_weight_smooth', 0.45)
+        self.declare_parameter('curvature_gain', 0.4)
+        self.declare_parameter('path_sample_step', 0.2)
+
+        self.min_turning_radius = float(
+            self.get_parameter('min_turning_radius').value)
+        self.smooth_iterations = int(
+            self.get_parameter('smooth_iterations').value)
+        self.smooth_weight_data = float(
+            self.get_parameter('smooth_weight_data').value)
+        self.smooth_weight_smooth = float(
+            self.get_parameter('smooth_weight_smooth').value)
+        self.curvature_gain = float(
+            self.get_parameter('curvature_gain').value)
+        self.path_sample_step = float(
+            self.get_parameter('path_sample_step').value)
+
         # 地图数据
         self.map_received = False
         self.grid = None          # numpy int8: -1,0,100
@@ -201,19 +222,29 @@ class AstarPlannerNode(Node):
             f"A* 原始路径点数={raw_len}，简化后={len(path_rc)}"
         )
 
+        # 将栅格坐标路径转换为世界坐标，并进行平滑
+        world_path = [self.grid_to_world(r, c) for r, c in path_rc]
+        world_path = self.vehicle_friendly_smoothing(world_path)
+
+        # 计算每个路径点的朝向（yaw），便于下游控制
+        yaws = self.estimate_yaws(world_path)
+
         # ---- 构造 Path 消息 ----
         path_msg = Path()
         path_msg.header.frame_id = self.frame_id
         path_msg.header.stamp = self.get_clock().now().to_msg()
 
-        for r, c in path_rc:
-            x, y = self.grid_to_world(r, c)
+        for idx, (x, y) in enumerate(world_path):
             ps = PoseStamped()
             ps.header = path_msg.header
             ps.pose.position.x = x
             ps.pose.position.y = y
             ps.pose.position.z = 0.0
-            ps.pose.orientation.w = 1.0
+            qw, qx, qy, qz = self.yaw_to_quaternion(yaws[idx])
+            ps.pose.orientation.x = qx
+            ps.pose.orientation.y = qy
+            ps.pose.orientation.z = qz
+            ps.pose.orientation.w = qw
             path_msg.poses.append(ps)
 
         # 每次规划成功就发布一条新的 global_path
@@ -351,6 +382,183 @@ class AstarPlannerNode(Node):
             idx = next_idx
 
         return simplified
+
+    # ----- 平滑 & 动力学约束 -----
+
+    def vehicle_friendly_smoothing(self, world_path):
+        """
+        先利用梯度平滑减少折线，再按最小转弯半径约束对拐点进行调整。
+        """
+        if len(world_path) <= 2:
+            return world_path
+
+        points = np.array(world_path, dtype=np.float64)
+        smoothed = points.copy()
+        max_curvature = 1.0 / max(self.min_turning_radius, 1e-3)
+
+        for _ in range(max(self.smooth_iterations, 1)):
+            max_delta = 0.0
+            for i in range(1, len(points) - 1):
+                prev_pt = smoothed[i - 1]
+                next_pt = smoothed[i + 1]
+                orig_pt = points[i]
+                current = smoothed[i]
+
+                data_term = self.smooth_weight_data * (orig_pt - current)
+                smooth_term = self.smooth_weight_smooth * \
+                    (prev_pt + next_pt - 2.0 * current)
+                current = current + data_term + smooth_term
+
+                radius, center = self.turning_radius(prev_pt, current, next_pt)
+                if radius is not None and radius > 1e-6:
+                    curvature = 1.0 / radius
+                    if curvature > max_curvature and center is not None:
+                        direction = current - center
+                        norm = np.linalg.norm(direction)
+                        if norm > 1e-6:
+                            direction = direction / norm
+                            diff = (curvature - max_curvature) / \
+                                max_curvature
+                            current = current + \
+                                self.curvature_gain * diff * direction
+
+                # 保证新点及与相邻点连线均处于自由区
+                if self.is_world_free_point(current) and \
+                        self.segment_collision_free(prev_pt, current) and \
+                        self.segment_collision_free(current, next_pt):
+                    max_delta = max(
+                        max_delta,
+                        float(np.linalg.norm(smoothed[i] - current))
+                    )
+                    smoothed[i] = current
+
+            if max_delta < 1e-4:
+                break
+
+        smoothed_list = smoothed.tolist()
+        return self.resample_path(smoothed_list, self.path_sample_step)
+
+    def turning_radius(self, p0, p1, p2):
+        """
+        返回三点确定圆的半径和圆心。如果三点共线则返回 (None, None)。
+        """
+        x0, y0 = p0
+        x1, y1 = p1
+        x2, y2 = p2
+
+        d = 2 * (x0 * (y1 - y2) +
+                 x1 * (y2 - y0) +
+                 x2 * (y0 - y1))
+        if abs(d) < 1e-9:
+            return None, None
+
+        ux = ((x0**2 + y0**2) * (y1 - y2) +
+              (x1**2 + y1**2) * (y2 - y0) +
+              (x2**2 + y2**2) * (y0 - y1)) / d
+        uy = ((x0**2 + y0**2) * (x2 - x1) +
+              (x1**2 + y1**2) * (x0 - x2) +
+              (x2**2 + y2**2) * (x1 - x0)) / d
+        center = np.array([ux, uy])
+        radius = float(np.linalg.norm(center - np.array(p0)))
+        return radius, center
+
+    def resample_path(self, path, step):
+        """
+        以固定步长重新采样轨迹，方便控制器追踪。
+        """
+        if step <= 1e-3 or len(path) < 2:
+            return path
+
+        resampled = [path[0]]
+        accumulated = 0.0
+        prev = np.array(path[0], dtype=np.float64)
+
+        for i in range(1, len(path)):
+            segment_end = np.array(path[i], dtype=np.float64)
+            seg_vec = segment_end - prev
+            seg_len = float(np.linalg.norm(seg_vec))
+            if seg_len < 1e-6:
+                prev = segment_end
+                continue
+            direction = seg_vec / seg_len
+            remaining = seg_len
+
+            while accumulated + remaining >= step - 1e-9:
+                need = step - accumulated
+                prev = prev + direction * need
+                resampled.append(prev.tolist())
+                remaining -= need
+                accumulated = 0.0
+                if remaining < 1e-6:
+                    break
+
+            accumulated += remaining
+            prev = segment_end
+
+        if np.linalg.norm(np.array(resampled[-1]) - np.array(path[-1])) > 1e-3:
+            resampled.append(path[-1])
+        else:
+            resampled[-1] = path[-1]
+        return resampled
+
+    def is_world_free_point(self, point):
+        """
+        检查世界坐标点是否在自由区内。
+        """
+        x, y = point
+        r, c = self.world_to_grid(x, y)
+        if not self.in_bounds(r, c):
+            return False
+        return self.is_free(r, c)
+
+    def segment_collision_free(self, start, end):
+        """
+        对世界坐标线段按地图分辨率采样，检查是否穿过障碍。
+        """
+        start = np.array(start, dtype=np.float64)
+        end = np.array(end, dtype=np.float64)
+        seg = end - start
+        length = float(np.linalg.norm(seg))
+        if length < 1e-6:
+            return self.is_world_free_point(start)
+
+        direction = seg / length
+        steps = max(int(length / max(self.resolution * 0.5, 1e-3)), 1)
+        for i in range(steps + 1):
+            point = start + direction * (length * i / steps)
+            if not self.is_world_free_point(point):
+                return False
+        return True
+
+    def estimate_yaws(self, world_path):
+        """
+        根据连续点计算朝向（yaw）。
+        """
+        if len(world_path) == 1:
+            return [0.0]
+
+        yaws = []
+        for i in range(len(world_path)):
+            if i == len(world_path) - 1:
+                dx = world_path[i][0] - world_path[i - 1][0]
+                dy = world_path[i][1] - world_path[i - 1][1]
+            else:
+                dx = world_path[i + 1][0] - world_path[i][0]
+                dy = world_path[i + 1][1] - world_path[i][1]
+            yaws.append(math.atan2(dy, dx))
+        return yaws
+
+    def yaw_to_quaternion(self, yaw):
+        """
+        将偏航角转换为四元数 (w,x,y,z)。
+        """
+        half = yaw * 0.5
+        return (
+            math.cos(half),
+            0.0,
+            0.0,
+            math.sin(half)
+        )
 
 
 def main(args=None):

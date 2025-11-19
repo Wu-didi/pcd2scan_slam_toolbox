@@ -31,6 +31,7 @@ setup(
                     'imu_gps_logger = pcd2scan_slam_toolbox.imu_gps_logger:main',
                     'png_map_publisher = pcd2scan_slam_toolbox.png_map_publisher:main',
                     'astar_planner_node = pcd2scan_slam_toolbox.astar_planner_node:main',
+                    'local_path_planner_node = pcd2scan_slam_toolbox.local_path_planner_node:main',
         ],
     },
 )
