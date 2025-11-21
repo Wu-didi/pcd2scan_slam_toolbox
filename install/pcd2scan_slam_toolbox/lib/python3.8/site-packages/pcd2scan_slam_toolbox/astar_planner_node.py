@@ -3,6 +3,8 @@
 
 import math
 import heapq
+import os
+import re
 
 import cv2
 import numpy as np
@@ -23,7 +25,9 @@ class AstarPlannerNode(Node):
     - 只要起点和终点都已设置，每次收到新的起点或终点，都会：
         * 使用膨胀后的栅格地图做 A* 规划
         * 对路径做 line-of-sight 简化
-        * 发布一条 /global_path
+        * 发布两条路径：
+            - /global_path       : map 坐标系下的路径（方便 RViz 看）
+            - /global_path_utm   : UTM 坐标系下的路径（给 MPC / PP 用）
     """
 
     def __init__(self):
@@ -53,6 +57,28 @@ class AstarPlannerNode(Node):
             self.get_parameter('curvature_gain').value)
         self.path_sample_step = float(
             self.get_parameter('path_sample_step').value)
+
+        # === 新增：读取 map.yaml，用于构造 map -> UTM 的线性变换 ===
+        #   map_yaml_path 需要在 launch 里传进来，例如：
+        #   <param name="map_yaml_path" value="/home/.../map.yaml"/>
+        self.declare_parameter('map_yaml_path', '/home/wudi/slam/get_pc_from_db3/map.yaml')
+        self.map_yaml_path = self.get_parameter('map_yaml_path').get_parameter_value().string_value
+
+        # PNG 左下角对应的 UTM 坐标（从 map.yaml 注释中解析）
+        self.png_origin_e = None  # E_png
+        self.png_origin_n = None  # N_png
+
+        # UTM 原点（建图时 lat0,lon0 对应的 UTM）
+        # map 坐标 (x_map, y_map) -> UTM: E = utm_origin_e + x_map, N = utm_origin_n + y_map
+        self.utm_origin_e = None
+        self.utm_origin_n = None
+
+        if self.map_yaml_path:
+            self.load_png_origin_utm(self.map_yaml_path)
+        else:
+            self.get_logger().warn(
+                "未设置 map_yaml_path 参数，将无法发布 UTM 坐标的路径 (/global_path_utm)"
+            )
 
         # 地图数据
         self.map_received = False
@@ -97,10 +123,47 @@ class AstarPlannerNode(Node):
             reliability=ReliabilityPolicy.RELIABLE,
             durability=DurabilityPolicy.TRANSIENT_LOCAL
         )
+        # map 坐标系的全局路径（主要给 RViz 看）
         self.path_pub = self.create_publisher(Path, 'global_path', path_qos)
+        # UTM 坐标系的全局路径（给 MPC / PP 使用）
+        self.path_pub_utm = self.create_publisher(Path, 'global_path_utm', path_qos)
 
         self.get_logger().info(
-            "AstarPlannerNode 启动，等待 /map、/initialpose、/goal_pose ...")
+            "AstarPlannerNode 启动，等待 /map、/initialpose、/goal_pose ..."
+        )
+
+    # ========== 解析 map.yaml 中的 PNG origin UTM ==========
+
+    def load_png_origin_utm(self, yaml_path: str):
+        """
+        从 map.yaml 中解析
+            # PNG origin UTM: E=..., N=...
+        这行注释，得到 PNG 左下角对应的 UTM 坐标。
+        """
+        if not os.path.exists(yaml_path):
+            self.get_logger().error(f"map_yaml_path 不存在: {yaml_path}")
+            return
+
+        try:
+            with open(yaml_path, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("# PNG origin UTM"):
+                        m = re.search(r"E\s*=\s*([0-9.+\-eE]+).*N\s*=\s*([0-9.+\-eE]+)", line)
+                        if m:
+                            self.png_origin_e = float(m.group(1))
+                            self.png_origin_n = float(m.group(2))
+                            self.get_logger().info(
+                                f"从 map.yaml 解析 PNG origin UTM: "
+                                f"E={self.png_origin_e:.3f}, N={self.png_origin_n:.3f}"
+                            )
+                            return
+            self.get_logger().warn(
+                "在 map.yaml 中未找到 '# PNG origin UTM: E=..., N=...' 注释，"
+                "将无法发布 UTM 路径。"
+            )
+        except Exception as e:
+            self.get_logger().error(f"解析 map.yaml 失败: {e}")
 
     # ========== 话题回调 ==========
 
@@ -137,6 +200,20 @@ class AstarPlannerNode(Node):
             f"robot_radius={self.robot_radius:.2f}m, inflation_cells={inflation_cells}"
         )
 
+        # === 一旦有了地图的 origin_xy，并且之前解析出了 PNG origin UTM，就可以算 UTM 原点 ===
+        if self.png_origin_e is not None and self.png_origin_n is not None:
+            # E_png = E0 + origin_x  =>  E0 = E_png - origin_x
+            self.utm_origin_e = self.png_origin_e - self.origin_x
+            self.utm_origin_n = self.png_origin_n - self.origin_y
+            self.get_logger().info(
+                f"计算得到 utm_origin: E0={self.utm_origin_e:.3f}, N0={self.utm_origin_n:.3f} "
+                f"(map (0,0) 对应的 UTM 坐标)"
+            )
+        else:
+            self.get_logger().warn(
+                "尚未获取 PNG origin UTM，因此无法计算 utm_origin，将只发布 map 坐标的路径。"
+            )
+
         # 地图更新后，如果已有起点和终点，也可以立刻重新规划
         self.try_plan()
 
@@ -170,6 +247,9 @@ class AstarPlannerNode(Node):
         return row, col
 
     def grid_to_world(self, row: int, col: int):
+        """
+        栅格 (row,col) -> 世界坐标 (map 坐标系下的 x,y)
+        """
         x = self.origin_x + (col + 0.5) * self.resolution
         y = self.origin_y + (row + 0.5) * self.resolution
         return x, y
@@ -181,13 +261,11 @@ class AstarPlannerNode(Node):
         只要：
         - 已收到地图
         - start_pose 和 goal_pose 都不是 None
-        就重新执行一次 A*，并发布一条新的 /global_path
+        就重新执行一次 A*，并发布 /global_path（map） 和 /global_path_utm（UTM）
         """
         if not self.map_received:
-            # 地图还没准备好
             return
         if self.start_pose is None or self.goal_pose is None:
-            # 只设置了起点或终点，等待另一端
             return
 
         sx, sy = self.start_pose.position.x, self.start_pose.position.y
@@ -222,16 +300,16 @@ class AstarPlannerNode(Node):
             f"A* 原始路径点数={raw_len}，简化后={len(path_rc)}"
         )
 
-        # 将栅格坐标路径转换为世界坐标，并进行平滑
+        # 将栅格坐标路径转换为世界坐标，并进行平滑（map 坐标系）
         world_path = [self.grid_to_world(r, c) for r, c in path_rc]
         world_path = self.vehicle_friendly_smoothing(world_path)
 
         # 计算每个路径点的朝向（yaw），便于下游控制
         yaws = self.estimate_yaws(world_path)
 
-        # ---- 构造 Path 消息 ----
+        # ---- 构造 map 坐标系的 Path 消息 ----
         path_msg = Path()
-        path_msg.header.frame_id = self.frame_id
+        path_msg.header.frame_id = self.frame_id  # 一般是 "map"
         path_msg.header.stamp = self.get_clock().now().to_msg()
 
         for idx, (x, y) in enumerate(world_path):
@@ -247,11 +325,43 @@ class AstarPlannerNode(Node):
             ps.pose.orientation.w = qw
             path_msg.poses.append(ps)
 
-        # 每次规划成功就发布一条新的 global_path
         self.path_pub.publish(path_msg)
         self.get_logger().info(
-            f"已发布 /global_path，点数={len(path_msg.poses)}"
+            f"已发布 /global_path (map 坐标)，点数={len(path_msg.poses)}"
         )
+
+        # ---- 构造 UTM 坐标系的 Path 消息（给 MPC / PP 使用）----
+        if self.utm_origin_e is not None and self.utm_origin_n is not None:
+            path_msg_utm = Path()
+            path_msg_utm.header.frame_id = "utm"
+            path_msg_utm.header.stamp = self.get_clock().now().to_msg()
+
+            for idx, (x_map, y_map) in enumerate(world_path):
+                # map -> UTM: E = E0 + x_map, N = N0 + y_map
+                E = self.utm_origin_e + x_map
+                N = self.utm_origin_n + y_map
+
+                ps = PoseStamped()
+                ps.header = path_msg_utm.header
+                ps.pose.position.x = E
+                ps.pose.position.y = N
+                ps.pose.position.z = 0.0
+                qw, qx, qy, qz = self.yaw_to_quaternion(yaws[idx])
+                ps.pose.orientation.x = qx
+                ps.pose.orientation.y = qy
+                ps.pose.orientation.z = qz
+                ps.pose.orientation.w = qw
+                path_msg_utm.poses.append(ps)
+
+            self.path_pub_utm.publish(path_msg_utm)
+            self.get_logger().info(
+                f"已发布 /global_path_utm (UTM 坐标)，点数={len(path_msg_utm.poses)}"
+            )
+        else:
+            self.get_logger().warn(
+                "未计算出 utm_origin，无法发布 /global_path_utm，如需 UTM 路径请确保 map.yaml 中有 "
+                "'# PNG origin UTM: E=..., N=...' 注释并设置 map_yaml_path 参数。"
+            )
 
     # ========== A* & 工具函数 ==========
 
