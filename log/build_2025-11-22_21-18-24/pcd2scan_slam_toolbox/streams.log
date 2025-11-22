@@ -1,0 +1,40 @@
+[0.450s] Invoking command in '/home/wudi/slam/pcd2scan_slam_toolbox': PYTHONPATH=/home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/pcd2scan_slam_toolbox build --build-base /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build install --record /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log --install-scripts $base/lib/pcd2scan_slam_toolbox --single-version-externally-managed install_data
+[0.592s] running egg_info
+[0.592s] writing build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/PKG-INFO
+[0.592s] writing dependency_links to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/dependency_links.txt
+[0.592s] writing entry points to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/entry_points.txt
+[0.593s] writing requirements to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/requires.txt
+[0.593s] writing top-level names to build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/top_level.txt
+[0.615s] reading manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+[0.615s] writing manifest file 'build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info/SOURCES.txt'
+[0.615s] running build
+[0.615s] running build_py
+[0.616s] copying pcd2scan_slam_toolbox/perception/fast_lidar_obstacle_detector_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
+[0.616s] running install
+[0.617s] running install_lib
+[0.618s] copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception/fast_lidar_obstacle_detector_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
+[0.618s] byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception/fast_lidar_obstacle_detector_node.py to fast_lidar_obstacle_detector_node.cpython-38.pyc
+[0.620s] running install_data
+[0.620s] running install_egg_info
+[0.621s] removing '/home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox-0.0.0-py3.8.egg-info' (and everything under it)
+[0.621s] Copying build/pcd2scan_slam_toolbox/pcd2scan_slam_toolbox.egg-info to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox-0.0.0-py3.8.egg-info
+[0.622s] running install_scripts
+[0.634s] Installing astar_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing fast_lidar_obstacle_detector script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing fast_obstacle_viz script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing ground_removal_to_scan_ros2 script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing imu_gps_logger script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.634s] Installing lidar_detector script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing lidar_detector_open3d script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing lidar_obstacle_viz script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing local_path_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing offline_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing old_simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing online_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing png_map_publisher script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing publish_imu script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.635s] Installing utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+[0.636s] writing list of installed files to '/home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log'
+[0.652s] Invoked command in '/home/wudi/slam/pcd2scan_slam_toolbox' returned '0': PYTHONPATH=/home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/pcd2scan_slam_toolbox build --build-base /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build install --record /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/install.log --install-scripts $base/lib/pcd2scan_slam_toolbox --single-version-externally-managed install_data

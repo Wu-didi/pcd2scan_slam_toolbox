@@ -27,6 +27,11 @@ copying pcd2scan_slam_toolbox/can_use.py -> /home/wudi/slam/pcd2scan_slam_toolbo
 copying pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
 copying pcd2scan_slam_toolbox/online_utm_to_tf.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox
+creating /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
+copying pcd2scan_slam_toolbox/perception/__init__.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
+copying pcd2scan_slam_toolbox/perception/lidar_obstacle_viz_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
+copying pcd2scan_slam_toolbox/perception/lidar_detector_open3d_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
+copying pcd2scan_slam_toolbox/perception/lidar_detector_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception
 running install
 running install_lib
 creating /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
@@ -42,6 +47,11 @@ copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/offline_utm_to_tf.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/can_use.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
+creating /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
+copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception/__init__.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
+copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception/lidar_obstacle_viz_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
+copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception/lidar_detector_open3d_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
+copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/perception/lidar_detector_node.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/ground_removal_to_scan.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 copying /home/wudi/slam/pcd2scan_slam_toolbox/build/pcd2scan_slam_toolbox/build/lib/pcd2scan_slam_toolbox/online_utm_to_tf.py -> /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/imu_gps_logger.py to imu_gps_logger.cpython-38.pyc
@@ -56,6 +66,10 @@ byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolb
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/offline_utm_to_tf.py to offline_utm_to_tf.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/can_use.py to can_use.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan_ros2.py to ground_removal_to_scan_ros2.cpython-38.pyc
+byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception/lidar_obstacle_viz_node.py to lidar_obstacle_viz_node.cpython-38.pyc
+byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception/lidar_detector_open3d_node.py to lidar_detector_open3d_node.cpython-38.pyc
+byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/perception/lidar_detector_node.py to lidar_detector_node.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/ground_removal_to_scan.py to ground_removal_to_scan.cpython-38.pyc
 byte-compiling /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/python3.8/site-packages/pcd2scan_slam_toolbox/online_utm_to_tf.py to online_utm_to_tf.cpython-38.pyc
 running install_data
@@ -71,6 +85,9 @@ Installing astar_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/in
 Installing ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing ground_removal_to_scan_ros2 script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing imu_gps_logger script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing lidar_detector script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing lidar_detector_open3d script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
+Installing lidar_obstacle_viz script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing local_path_planner_node script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing offline_utm_to_tf script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox
 Installing old_simple_ground_removal_to_scan script to /home/wudi/slam/pcd2scan_slam_toolbox/install/pcd2scan_slam_toolbox/lib/pcd2scan_slam_toolbox

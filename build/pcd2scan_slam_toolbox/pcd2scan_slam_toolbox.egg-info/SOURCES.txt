@@ -23,6 +23,12 @@ pcd2scan_slam_toolbox/old_time_ground_removal_to_scan_simple.py
 pcd2scan_slam_toolbox/online_utm_to_tf.py
 pcd2scan_slam_toolbox/png_map_publisher.py
 pcd2scan_slam_toolbox/utm_to_tf.py
+pcd2scan_slam_toolbox/perception/__init__.py
+pcd2scan_slam_toolbox/perception/fast_lidar_obstacle_detector_node.py
+pcd2scan_slam_toolbox/perception/fast_obstacle_viz_node.py
+pcd2scan_slam_toolbox/perception/lidar_detector_node.py
+pcd2scan_slam_toolbox/perception/lidar_detector_open3d_node.py
+pcd2scan_slam_toolbox/perception/lidar_obstacle_viz_node.py
 resource/pcd2scan_slam_toolbox
 test/test_copyright.py
 test/test_flake8.py

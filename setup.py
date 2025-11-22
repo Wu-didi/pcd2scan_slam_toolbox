@@ -1,11 +1,11 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 package_name = 'pcd2scan_slam_toolbox'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
+    packages=find_packages(include=[package_name, f"{package_name}.*"]),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -32,6 +32,12 @@ setup(
                     'png_map_publisher = pcd2scan_slam_toolbox.png_map_publisher:main',
                     'astar_planner_node = pcd2scan_slam_toolbox.astar_planner_node:main',
                     'local_path_planner_node = pcd2scan_slam_toolbox.local_path_planner_node:main',
+                    'lidar_detector = pcd2scan_slam_toolbox.perception.lidar_detector_node:main',
+                    'lidar_obstacle_viz = pcd2scan_slam_toolbox.perception.lidar_obstacle_viz_node:main',
+                    'lidar_detector_open3d = pcd2scan_slam_toolbox.perception.lidar_detector_open3d_node:main',
+                    'fast_lidar_obstacle_detector = pcd2scan_slam_toolbox.perception.fast_lidar_obstacle_detector_node:main',
+                    'fast_obstacle_viz = pcd2scan_slam_toolbox.perception.fast_obstacle_viz_node:main',
+
         ],
     },
 )

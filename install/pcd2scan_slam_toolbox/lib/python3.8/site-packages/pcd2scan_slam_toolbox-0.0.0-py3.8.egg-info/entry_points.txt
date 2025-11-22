@@ -1,8 +1,13 @@
 [console_scripts]
 astar_planner_node = pcd2scan_slam_toolbox.astar_planner_node:main
+fast_lidar_obstacle_detector = pcd2scan_slam_toolbox.perception.fast_lidar_obstacle_detector_node:main
+fast_obstacle_viz = pcd2scan_slam_toolbox.perception.fast_obstacle_viz_node:main
 ground_removal_to_scan = pcd2scan_slam_toolbox.ground_removal_to_scan:main
 ground_removal_to_scan_ros2 = pcd2scan_slam_toolbox.ground_removal_to_scan_ros2:main
 imu_gps_logger = pcd2scan_slam_toolbox.imu_gps_logger:main
+lidar_detector = pcd2scan_slam_toolbox.perception.lidar_detector_node:main
+lidar_detector_open3d = pcd2scan_slam_toolbox.perception.lidar_detector_open3d_node:main
+lidar_obstacle_viz = pcd2scan_slam_toolbox.perception.lidar_obstacle_viz_node:main
 local_path_planner_node = pcd2scan_slam_toolbox.local_path_planner_node:main
 offline_utm_to_tf = pcd2scan_slam_toolbox.offline_utm_to_tf:main
 old_simple_ground_removal_to_scan = pcd2scan_slam_toolbox.old_time_ground_removal_to_scan_simple:main
